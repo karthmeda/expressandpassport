@@ -8,13 +8,7 @@ router.get('/register', authHelpers.loginRedirect, (req, res)=> {
   res.render('auth/register');
 });
 
-function loginRedirect(req, res, next) {
-  if (req.user) return res.status(401).json(
-    { status: 'You are already logged in' }
-  );
 
-  return next();
-}
 
 router.post('/register', (req, res, next)  => {
   return authHelpers.createUser(req, res)

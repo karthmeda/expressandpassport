@@ -6,6 +6,14 @@ function comparePass(userPassword, databasePassword) {
   return bcrypt.compareSync(userPassword, databasePassword);
 }
 
+function loginRedirect(req, res, next) {
+  if (req.user) return res.status(401).json(
+    { status: 'You are already logged in' }
+  );
+
+  return next();
+}
+
 function createUser(req, res) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
