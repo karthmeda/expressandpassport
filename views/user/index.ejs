@@ -3,12 +3,12 @@
     <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-        <p>Hello, this is the user profile page!</p>
-        <p><%= user.firstName %></p>
-        <p><%= user.lastName %></p>
-        <p><%= user.email %></p>
-        <p><%= user.dob %></p>
-        <a href="/auth/logout">LOG OUT</a>
+        <p class="center-align">Hello, this is the user profile page!</p><br/>
+        <p class="center-align"><%= user.firstName %></p>
+        <p class="center-align"><%= user.lastName %></p>
+        <p class="center-align"><%= user.email %></p>
+        <p class="center-align"><%= user.dob %></p>
+        <a href="/auth/logout" class="center-align">LOG OUT</a>
       </div>
     </main>
     <% include ../partials/footer.ejs %>
